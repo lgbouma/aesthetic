@@ -3,7 +3,8 @@
 Style-related tools that I re-use across projects in astronomy.
 
 __install__
-Cloning + `python setup.py` downloads relevant dependencies.
+1. `pip install git+https://github.com/garrettj403/SciencePlots.git`
+2. Clone + `python setup.py` this repo.
 
 __contents__
 
