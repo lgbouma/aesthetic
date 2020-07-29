@@ -2,9 +2,11 @@
 
 Style-related tools that I re-use across projects in astronomy.
 
+Most relevant are the style sheets, which produce default plots as in the
+`/results/` directory.
+
 __install__
-1. `pip install git+https://github.com/garrettj403/SciencePlots.git`
-2. Clone + `python setup.py` this repo.
+Clone + `python setup.py install` from the repo. (or develop!)
 
 __contents__
 
