@@ -10,11 +10,11 @@ Clone + `python setup.py install` from the repo. (or develop!)
 
 __contents__
 
-`aesthetic.plots`
+`aesthetic.plot`
 * `set_style`
 * `set_style_scatter`
 * `savefig`
 * `format_ax`
 
-`aesthetic.papers`
+`aesthetic.paper`
 * `abbreviate_the_bibliography`
