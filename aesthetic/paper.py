@@ -20,9 +20,13 @@ def abbreviate_the_bibliography(input_bib, output_bib):
     mdict['Publications of the Astronomical Society of the Pacific'] = r'\pasp'
     mdict['Astronomy and Astrophysics'] = r'\aap'
     mdict['Astronomy & Astrophysics'] = r'\aap'
+    mdict['Astronomy \& Astrophysics'] = r'\aap'
     mdict['Monthly Notices of the Royal Astronomical Society: Letters'] = r'\mnras:l'
     mdict['Monthly Notices of the Royal Astronomical Society'] = r'\mnras'
     mdict['Nature'] = r'\nat'
+
+    fdict = OrderedDict({})
+    fdict['note = {arXiv:'] = ''
 
     with open(input_bib, 'r') as f:
         lines = f.readlines()
@@ -32,6 +36,11 @@ def abbreviate_the_bibliography(input_bib, output_bib):
             if k in l:
                 _newline = l.replace(k, v)
                 lines[ix] = _newline
+
+    for k in fdict.keys():
+        for ix, l in enumerate(lines):
+            if k in l:
+                lines.pop(ix)
 
     with open(output_bib, 'w') as f:
         f.writelines(lines)
