@@ -25,6 +25,8 @@ def abbreviate_the_bibliography(input_bib, output_bib):
     mdict['Monthly Notices of the Royal Astronomical Society'] = r'\mnras'
     mdict['Nature'] = r'\nat'
 
+    # Sometimes, zotero randomly adds the arXiv ID as a note, even for
+    # published papers.
     fdict = OrderedDict({})
     fdict['note = {arXiv:'] = ''
 
