@@ -18,3 +18,23 @@ __contents__
 
 `aesthetic.paper`
 * `abbreviate_the_bibliography`
+
+__results__
+
+Default plot with lines
+
+```
+from aesthetic.plot import set_style, set_style_grid
+set_style()
+```
+
+Will yield:
+
+<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_standard.png" width="500">
+
+```
+set_style_grid()
+```
+
+Will yield:
+<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_grid.png" width="500">
