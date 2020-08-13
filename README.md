@@ -20,6 +20,10 @@ __contents__
 * `abbreviate_the_bibliography`
 
 __usage examples__
+
+for plot styles, see the [test driver](https://github.com/lgbouma/aesthetic/blob/master/tests/make_test_plot.py).
+the general syntax follows:
+
 ```
 from aesthetic.plot import set_style, set_style_grid
 set_style()
