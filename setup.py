@@ -77,7 +77,7 @@ setup(
         'matplotlib-style-sheets'
     ],
     url='https://github.com/lgbouma/aesthetic',
-    download_url = 'https://github.com/lgbouma/aesthetic/archive/v02.tar.gz',
+    download_url = 'https://github.com/lgbouma/aesthetic/archive/refs/tags/v02.tar.gz',
     author='Luke Bouma',
     author_email='bouma.luke@gmail.com',
     license='MIT',
