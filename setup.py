@@ -60,7 +60,7 @@ INSTALL_REQUIRES = [
 # run setup.
 setup(
     name='aesthetic',
-    version='0.1',
+    version='0.3',
     description=('a e s t h e t i c'),
     long_description=readme(),
     long_description_content_type="text/markdown",
