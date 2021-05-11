@@ -3,7 +3,7 @@ Plotting utilities that I re-use.
 
 Contents:
     set_style
-    set_style_scatter
+    set_style_grid
     savefig
     format_ax
 """
@@ -40,7 +40,7 @@ def savefig(fig, figpath, writepdf=True, dpi=450):
 
     if writepdf:
         pdffigpath = figpath.replace('.png','.pdf')
-        fig.savefig(pdffigpath, bbox_inches='tight', rasterized=True, dpi=dpi)
+        fig.savefig(pdffigpath, bbox_inches='tight', dpi=dpi)
         print(f'{datetime.utcnow().isoformat()}: made {pdffigpath}')
 
     plt.close('all')

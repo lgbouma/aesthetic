@@ -3,7 +3,6 @@ setup.py - Luke Bouma (luke@astro.princeton.edu) - Jul 2020
 
 Pillaged from https://github.com/garrettj403/SciencePlots
 """
-__version__ = '0.0.0'
 
 import sys
 from setuptools import setup
@@ -49,9 +48,8 @@ def readme():
 
 
 INSTALL_REQUIRES = [
-    'numpy>=1.4.0',
+    'numpy',
     'scipy',
-    'astropy>=1.3',
     'matplotlib',
 ]
 
@@ -62,23 +60,24 @@ INSTALL_REQUIRES = [
 # run setup.
 setup(
     name='aesthetic',
-    version=__version__,
+    version='0.1',
     description=('a e s t h e t i c'),
     long_description=readme(),
     long_description_content_type="text/markdown",
     classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: MIT License',
         "Intended Audience :: Science/Research",
         "Topic :: Scientific/Engineering :: Astronomy",
         "Operating System :: OS Independent",
-        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
     ],
     keywords=[
         'astronomy',
         'matplotlib-style-sheets'
     ],
     url='https://github.com/lgbouma/aesthetic',
+    download_url = 'https://github.com/user/reponame/archive/v01.tar.gz',
     author='Luke Bouma',
     author_email='bouma.luke@gmail.com',
     license='MIT',
