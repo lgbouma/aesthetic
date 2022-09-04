@@ -1,8 +1,6 @@
 import matplotlib as mpl
 import numpy as np, matplotlib.pyplot as plt
-from aesthetic.plot import (
-    savefig, set_style, set_style_scatter, set_style_grid, format_ax
-)
+from aesthetic.plot import savefig, set_style, format_ax
 
 x = np.linspace(0,10,1000)
 y = (x/100)**3 + 5*np.sin(x)
@@ -20,9 +18,9 @@ def do_plot():
     ax.legend()
     return fig
 
-set_style('test')
+set_style('clean')
 fig = do_plot()
-savefig(fig, '../results/plot_default.png')
+savefig(fig, '../results/plot_clean.png')
 mpl.rc_file_defaults()
 
 set_style('science')
