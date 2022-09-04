@@ -1,3 +1,4 @@
+import matplotlib as mpl
 import numpy as np, matplotlib.pyplot as plt
 from aesthetic.plot import (
     savefig, set_style, set_style_scatter, set_style_grid, format_ax
@@ -6,29 +7,34 @@ from aesthetic.plot import (
 x = np.linspace(0,10,1000)
 y = (x/100)**3 + 5*np.sin(x)
 
-set_style()
-fig, ax = plt.subplots()
-ax.plot(x, y)
-ax.plot(x, y+3)
-ax.plot(x, y+6)
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-savefig(fig, '../results/plot_standard.png')
+_x, _y = np.arange(2, 8, 0.5), np.arange(2, 8, 0.5)
 
-set_style_scatter()
-fig, ax = plt.subplots()
-ax.scatter(x[::50], y[::50])
-ax.scatter(x[::50], y[::50]+3)
-ax.scatter(x[::50], y[::50]+6)
-ax.set_xlabel('x')
-ax.set_ylabel('y')
+def do_plot():
+    fig, ax = plt.subplots()
+    ax.plot(x, y)
+    ax.plot(x, y+3, label='test')
+    ax.plot(x, y+6)
+    ax.scatter(_x, _y)
+    ax.set_xlabel(r'x [units]')
+    ax.set_ylabel(r'y [units]')
+    ax.legend()
+    return fig
+
+set_style('test')
+fig = do_plot()
+savefig(fig, '../results/plot_default.png')
+mpl.rc_file_defaults()
+
+set_style('science')
+fig = do_plot()
+savefig(fig, '../results/plot_science.png')
+mpl.rc_file_defaults()
+
+set_style('scatter')
+fig = do_plot()
 savefig(fig, '../results/plot_scatter.png')
+mpl.rc_file_defaults()
 
-set_style_grid()
-fig, ax = plt.subplots()
-ax.plot(x, y)
-ax.plot(x, y+3)
-ax.plot(x, y+6)
-ax.set_xlabel('x')
-ax.set_ylabel('y')
+set_style('grid')
+fig = do_plot()
 savefig(fig, '../results/plot_grid.png')
