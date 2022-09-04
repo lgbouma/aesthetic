@@ -25,16 +25,6 @@ def set_style(stylelist=['science']):
     plt.style.use(stylelist)
 
 
-def set_style_grid(stylelist=['science','notebook','grid']):
-    # Utility function for plots with grids.
-    set_style(stylelist)
-
-
-def set_style_scatter(stylelist=['science','notebook','scatter']):
-    # Utility function for scatter plots.
-    set_style(stylelist)
-
-
 def savefig(fig, figpath, writepdf=True, dpi=450):
     fig.savefig(figpath, dpi=dpi, bbox_inches='tight')
     print(f'{datetime.utcnow().isoformat()}: made {figpath}')

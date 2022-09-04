@@ -28,14 +28,14 @@ for plot styles, see the [test driver](https://github.com/lgbouma/aesthetic/blob
 the general syntax follows:
 
 ```
-from aesthetic.plot import set_style, set_style_grid
-set_style()
+from aesthetic.plot import set_style
+set_style("science")
 ```
 
-<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_standard.png" width="500">
+<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_science.png" width="500">
 
 ```
-set_style_grid()
+set_style("clean")
 ```
 
-<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_grid.png" width="500">
+<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_clean.png" width="500">
