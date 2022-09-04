@@ -10,7 +10,7 @@ Contents:
 import numpy as np, matplotlib.pyplot as plt, pandas as pd
 from datetime import datetime
 
-def set_style(stylelist=['science','notebook']):
+def set_style(stylelist=['science']):
     """
     Set styles using https://github.com/garrettj403/SciencePlots
 
@@ -21,6 +21,7 @@ def set_style(stylelist=['science','notebook']):
     Color cycles:
         'high-vis', 'bright', 'vibrant', 'muted', 'retro'.
     """
+    if isinstance(stylelist, str): stylelist = [stylelist]
     plt.style.use(stylelist)
 
 
@@ -40,7 +41,7 @@ def savefig(fig, figpath, writepdf=True, dpi=450):
 
     if writepdf:
         pdffigpath = figpath.replace('.png','.pdf')
-        fig.savefig(pdffigpath, bbox_inches='tight', dpi=dpi)
+        fig.savefig(pdffigpath, bbox_inches='tight', dpi=dpi, pad_inches=0.05)
         print(f'{datetime.utcnow().isoformat()}: made {pdffigpath}')
 
     plt.close('all')
