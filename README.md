@@ -6,7 +6,10 @@ Most relevant are the style sheets, which produce default plots as in the
 `/results/` directory.
 
 __install__
-Clone + `python setup.py install` from the repo. (or develop!)
+
+_Option 1_: `pip install aesthetic`
+
+_Option 2_: Clone + `python setup.py install` from the repo. (or develop!)
 
 __contents__
 
