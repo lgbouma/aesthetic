@@ -31,6 +31,12 @@ axes.linewidth : 0.5
 grid.linewidth : 0.5
 lines.linewidth : 1.
 
+# Axis spines
+axes.spines.top:    True
+axes.spines.right:  True
+axes.spines.left:   True  # display axis spines
+axes.spines.bottom: True
+
 # # Remove legend frame
 # legend.frameon : False
 
