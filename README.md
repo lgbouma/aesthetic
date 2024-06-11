@@ -1,9 +1,6 @@
 # a e s t h e t i c
 
-Style-related tools that I re-use across projects in astronomy.
-
-Most relevant are the style sheets, which produce default plots as in the
-`/results/` directory.
+Luke's matplotlib style sheets
 
 __install__
 
