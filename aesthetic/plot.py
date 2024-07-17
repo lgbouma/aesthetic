@@ -42,7 +42,4 @@ def format_ax(ax):
     ax.xaxis.set_ticks_position('both')
     ax.get_yaxis().set_tick_params(which='both', direction='in')
     ax.get_xaxis().set_tick_params(which='both', direction='in')
-    for tick in ax.xaxis.get_major_ticks():
-        tick.label.set_fontsize('small')
-    for tick in ax.yaxis.get_major_ticks():
-        tick.label.set_fontsize('small')
+    ax.tick_params(axis='both', which='major', labelsize='small')
