@@ -37,6 +37,15 @@ axes.spines.right:  True
 axes.spines.left:   True  # display axis spines
 axes.spines.bottom: True
 
+# Restore <=mpl 3.6 default font sizes
+font.size: 7  # Default font size for text elements
+axes.labelsize: 8  # Font size for axis labels
+xtick.labelsize: 7  # Font size for x-tick labels
+ytick.labelsize: 7  # Font size for y-tick labels
+legend.fontsize: 6  # Font size for legend labels
+figure.titlesize: 8  # Font size for figure titles
+axes.titlesize: 8  # Font size for axes titles
+
 # # Remove legend frame
 # legend.frameon : False
 
