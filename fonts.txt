@@ -1,0 +1,15 @@
+Computer Modern
+DejaVu Sans
+Helvetica
+Times New Roman
+Arial
+
+Matplotlib default is DejaVu Sans.  Suffers imcompatibility issues for e.g.
+keynote loading on laptops that are not your own.
+
+Compute modern / TeX only is serifed, which some view as aesthetically harder
+to read than sans-serif.  Ditto Times New Roman.
+
+That leaves Helvetica and Arial.  Either seems fine; default to Arial because
+'Helvetica' is not a valid value for mathtext.fontset; supported values are
+['dejavusans', 'dejavuserif', 'cm', 'stix', 'stixsans', 'custom']

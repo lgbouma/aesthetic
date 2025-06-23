@@ -6,7 +6,6 @@ Pillaged from https://github.com/garrettj403/SciencePlots
 
 import sys
 from setuptools import setup
-from setuptools.command.test import test as TestCommand
 from setuptools.command.install import install
 
 import atexit, glob, os, shutil
