@@ -1,6 +1,4 @@
-# Matplotlib style for Nature journal figures.
-# In general, they advocate for all fonts to be sans serif
-# and all font sizes in a figure to be 7 pt and panel labels to be 8 pt bold.
+# Matplotlib style for clean figures.
 
 # Figure size
 figure.figsize : 3.3, 2.5  # max width is 3.5 for single column
@@ -55,4 +53,3 @@ axes.spines.bottom: True
 axes.linewidth : 0.65
 grid.linewidth : 0.5
 lines.linewidth : 1.
-

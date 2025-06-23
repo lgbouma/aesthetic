@@ -1,38 +1,41 @@
-import matplotlib as mpl
-import numpy as np, matplotlib.pyplot as plt
-from aesthetic.plot import savefig, set_style, format_ax
+from aesthetic.plot import set_style
 
-x = np.linspace(0,10,1000)
-y = (x/100)**3 + 5*np.sin(x)
+import numpy as np, matplotlib.pyplot as plt, matplotlib as mpl
+import matplotlib.colors as mcolors
+from cycler import cycler
 
-_x, _y = np.arange(2, 8, 0.5), np.arange(2, 8, 0.5)
+def set_colors(style):
+    base = plt.rcParams['axes.prop_cycle'].by_key()['color']
+    if '_wob' in style:
+        inverse = [tuple(1 - v for v in mcolors.to_rgb(c)) for c in base]
+        plt.rcParams['axes.prop_cycle'] = cycler('color', inverse)
+    else:
+        pass
 
-def do_plot():
-    fig, ax = plt.subplots()
-    ax.plot(x, y)
-    ax.plot(x, y+3, label='test')
+def make_plot(style):
+    x = np.linspace(0,10,1000)
+    y = (x/100)**3 + 5*np.sin(x)
+    _x, _y = np.arange(2, 8, 0.5), np.arange(2, 8, 0.5)
+
+    set_colors(style)
+    fig, ax = plt.subplots(figsize=(3,2.5))
+    ax.plot(x, y, label=f'style: {style}')
+    ax.plot(x, y+3)
     ax.plot(x, y+6)
-    ax.scatter(_x, _y)
-    ax.set_xlabel(r'x [units]')
-    ax.set_ylabel(r'y [units]')
-    ax.legend()
+    _yerr = np.abs(np.random.normal(2, 1, _x.size))
+    c = 'k' if '_wob' not in style else 'w'
+    ax.errorbar(_x, _y, yerr=_yerr, marker='o', elinewidth=0.5, lw=0, c=c, markersize=2)
+    ax.update({
+        'xlabel': r'x [units]',
+        'ylabel': r'y [units]',
+    })
+    ax.legend(fontsize='small')
     return fig
 
-set_style('clean')
-fig = do_plot()
-savefig(fig, '../results/plot_clean.png')
-mpl.rc_file_defaults()
-
-set_style('science')
-fig = do_plot()
-savefig(fig, '../results/plot_science.png')
-mpl.rc_file_defaults()
-
-set_style('scatter')
-fig = do_plot()
-savefig(fig, '../results/plot_scatter.png')
-mpl.rc_file_defaults()
-
-set_style('grid')
-fig = do_plot()
-savefig(fig, '../results/plot_grid.png')
+if __name__ == '__main__':
+    styles = ['clean', 'science', 'clean_wob', 'science_wob']
+    for style in styles:
+        set_style(style)
+        fig = make_plot(style)
+        fig.savefig(f'../results/plot_{style}.png', bbox_inches='tight', dpi=400)
+        mpl.rc_file_defaults()

@@ -21,11 +21,16 @@ def set_style(stylelist=['science']):
     Color cycles:
         'high-vis', 'bright', 'vibrant', 'muted', 'retro'.
     """
-    if isinstance(stylelist, str): stylelist = [stylelist]
+    if isinstance(stylelist, str):
+        stylelist = [stylelist]
     plt.style.use(stylelist)
 
 
 def savefig(fig, figpath, writepdf=True, dpi=450):
+    """
+    Wrapper to matplotlib's fig.savefig that i) makes both a png and a pdf, and
+    ii) prints the time at which the file was saved.
+    """
     fig.savefig(figpath, dpi=dpi, bbox_inches='tight')
     print(f'{datetime.utcnow().isoformat()}: made {figpath}')
 
