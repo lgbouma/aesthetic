@@ -57,7 +57,7 @@ INSTALL_REQUIRES = [
 ###############
 
 # run setup.
-version = 0.7
+version = 0.8
 setup(
     name='aesthetic',
     version=version,
