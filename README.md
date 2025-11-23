@@ -25,25 +25,26 @@ from aesthetic import set_style
 set_style("clean")
 ```
 
-<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_clean.png" width="500">
+<img src="https://raw.githubusercontent.com/lgbouma/aesthetic/master/results/plot_clean.png?v=2" width="500">
+
 
 ```
 set_style("clean_wob")
 ```
 
-<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_clean_wob.png" width="500">
+<img src="https://raw.githubusercontent.com/lgbouma/aesthetic/blob/master/results/plot_clean_wob.png?v=2" width="500">
 
 ```
 set_style("science")
 ```
 
-<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_science.png" width="500">
+<img src="https://raw.githubusercontent.com/lgbouma/aesthetic/blob/master/results/plot_science.png?v=2" width="500">
 
 ```
 set_style("science_wob")
 ```
 
-<img src="https://github.com/lgbouma/aesthetic/blob/master/results/plot_science_wob.png" width="500">
+<img src="https://raw.githubusercontent.com/lgbouma/aesthetic/blob/master/results/plot_science_wob.png?v=2" width="500">
 
 
 So if you wanted to make four different versions of the same plot with responsive colors:
