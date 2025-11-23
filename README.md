@@ -1,13 +1,13 @@
 # a e s t h e t i c
 
 Luke's matplotlib style sheets.
-See also John Garrett's [SciencePlots](https://github.com/garrettj403/SciencePlots).
+Remixed from John Garrett's [SciencePlots](https://github.com/garrettj403/SciencePlots).
 
-Preferences include:
+Preferences:
 * Avoid constantly repeating matplotlib calls to prettify plots.
-* Avoid DejaVu Sans as a default matplotlib font.
-* Avoid drawing right and top axis spines unless they provide function.
-* White on black reduces eye strain; make generating white on black figures easier using `*_wob` style sheets.
+* Default font: Arial (not DejaVu Sans, which many systems don't have installed by default)
+* Don't draw right and top axis spines unless they provide function.
+* White on black reduces eye strain; make generating white on black figures easy by using `*_wob` style sheets.
 
 __install__
 
@@ -15,7 +15,7 @@ _...via pip_: `pip install aesthetic`
 
 _...via local clone_: `git clone git@github.com:lgbouma/aesthetic.git;  cd aesthetic;  pip install -e . `
 
-__usage examples__
+__examples__
 
 for plot styles, see the [test driver](https://github.com/lgbouma/aesthetic/blob/master/tests/make_test_plot.py).
 the general syntax follows:
@@ -49,7 +49,7 @@ set_style("science_wob")
 So if you wanted to make four different versions of the same plot with responsive colors:
 
 ```
-from aesthetic import set_style
+from aesthetic.plot import set_style
 
 import numpy as np, matplotlib.pyplot as plt, matplotlib as mpl
 import matplotlib.colors as mcolors
@@ -70,16 +70,14 @@ def make_plot(style):
 
     set_colors(style)
     fig, ax = plt.subplots(figsize=(3,2.5))
-    ax.plot(x, y, label=f'style: {style}')
-    ax.plot(x, y+3)
-    ax.plot(x, y+6)
+    cs = [None]*3 if '_wob' not in style else ['cyan','lime','yellow']
+    ax.plot(x, y, label=f'style: {style}', color=cs[0])
+    ax.plot(x, y+3, color=cs[1])
+    ax.plot(x, y+6, color=cs[2])
     _yerr = np.abs(np.random.normal(2, 1, _x.size))
     c = 'k' if '_wob' not in style else 'w'
     ax.errorbar(_x, _y, yerr=_yerr, marker='o', elinewidth=0.5, lw=0, c=c, markersize=2)
-    ax.update({
-        'xlabel': r'x [units]',
-        'ylabel': r'y [units]',
-    })
+    ax.update({ 'xlabel': r'x [units]', 'ylabel': r'y [units]' })
     ax.legend(fontsize='small')
     return fig
 
@@ -88,6 +86,6 @@ if __name__ == '__main__':
     for style in styles:
         set_style(style)
         fig = make_plot(style)
-        fig.savefig(f'plot_{style}.png', bbox_inches='tight', dpi=400)
+        fig.savefig(f'../results/plot_{style}.png', bbox_inches='tight', dpi=400)
         mpl.rc_file_defaults()
 ```

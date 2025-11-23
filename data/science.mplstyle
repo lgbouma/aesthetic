@@ -53,10 +53,13 @@ axes.spines.bottom: True
 # savefig.bbox : tight
 # savefig.pad_inches : 0.05
 
-# # Use serif fonts
-# font.serif : Times New Roman
-# font.family : serif
-# mathtext.fontset : dejavuserif
+# Font Family
+font.family      : Arial
+mathtext.fontset : custom
+mathtext.rm      : Arial
+mathtext.it      : Arial:italic
+mathtext.bf      : Arial:bold
+mathtext.sf      : Arial
 
 # # Use LaTeX for math formatting
 # text.usetex : True

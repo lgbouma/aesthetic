@@ -19,16 +19,14 @@ def make_plot(style):
 
     set_colors(style)
     fig, ax = plt.subplots(figsize=(3,2.5))
-    ax.plot(x, y, label=f'style: {style}')
-    ax.plot(x, y+3)
-    ax.plot(x, y+6)
+    cs = [None]*3 if '_wob' not in style else ['cyan','lime','yellow']
+    ax.plot(x, y, label=f'style: {style}', color=cs[0])
+    ax.plot(x, y+3, color=cs[1])
+    ax.plot(x, y+6, color=cs[2])
     _yerr = np.abs(np.random.normal(2, 1, _x.size))
     c = 'k' if '_wob' not in style else 'w'
     ax.errorbar(_x, _y, yerr=_yerr, marker='o', elinewidth=0.5, lw=0, c=c, markersize=2)
-    ax.update({
-        'xlabel': r'x [units]',
-        'ylabel': r'y [units]',
-    })
+    ax.update({ 'xlabel': r'x [units]', 'ylabel': r'y [units]' })
     ax.legend(fontsize='small')
     return fig
 

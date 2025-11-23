@@ -5,3 +5,11 @@ axes.prop_cycle : (cycler('marker', ['o', 's', '^', 'v', '<', '>', 'd']) + cycle
 
 # # Set marker size
 # lines.markersize : 3
+
+# Font Family
+font.family      : Arial
+mathtext.fontset : custom
+mathtext.rm      : Arial
+mathtext.it      : Arial:italic
+mathtext.bf      : Arial:bold
+mathtext.sf      : Arial
