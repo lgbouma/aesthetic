@@ -17,7 +17,7 @@ def make_plot(style):
     y = (x/100)**3 + 5*np.sin(x)
     _x, _y = np.arange(2, 8, 0.5), np.arange(2, 8, 0.5)
 
-    set_colors(style)
+    #set_colors(style)
     fig, ax = plt.subplots(figsize=(3,2.5))
     cs = [None]*3 if '_wob' not in style else ['cyan','lime','yellow']
     ax.plot(x, y, label=f'style: {style}', color=cs[0])
