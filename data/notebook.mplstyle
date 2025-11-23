@@ -28,8 +28,14 @@ axes.linewidth : 1
 grid.linewidth : 1
 lines.linewidth : 2.
 
-# # Use sans-serif fonts
-# font.family : sans-serif
-# 
+
+# Font Family
+font.family      : Arial
+mathtext.fontset : custom
+mathtext.rm      : Arial
+mathtext.it      : Arial:italic
+mathtext.bf      : Arial:bold
+mathtext.sf      : Arial
+
 # # Use LaTeX for math formatting
 # text.usetex : False
