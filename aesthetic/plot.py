@@ -7,8 +7,14 @@ Contents:
     savefig
     format_ax
 """
-import numpy as np, matplotlib.pyplot as plt, pandas as pd
+import os as _os
+import numpy as np, matplotlib.pyplot as plt, matplotlib.style as _mplstyle, pandas as pd
 from datetime import datetime
+
+_styles_dir = _os.path.join(_os.path.dirname(__file__), 'styles')
+if _styles_dir not in _mplstyle.core.USER_LIBRARY_PATHS:
+    _mplstyle.core.USER_LIBRARY_PATHS.append(_styles_dir)
+    _mplstyle.reload_library()
 
 def set_style(stylelist=['science']):
     """

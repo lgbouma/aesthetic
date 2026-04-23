@@ -3,8 +3,6 @@
 import os
 from importlib import resources
 
-from setuptools.command.install import install
-
 STYLE_PACKAGE = "aesthetic.styles"
 STYLE_SUFFIX = ".mplstyle"
 
@@ -33,11 +31,3 @@ def install_styles():
         with open(destination, "wb") as target:
             target.write(data)
         print(name)
-
-
-class PostInstallMoveFile(install):
-    """Install command that copies the packaged style files to matplotlib."""
-
-    def run(self):
-        super().run()
-        install_styles()
